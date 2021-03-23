@@ -1,5 +1,5 @@
-from src.config import DB
-from peewee import Model, TextField, PrimaryKeyField, IntegerField, DateTimeField
+from config import DB
+from peewee import Model, TextField, PrimaryKeyField, IntegerField
 
 """
 schema of table utils
@@ -7,7 +7,7 @@ schema of table utils
 
 class Grade(Model):
     id = PrimaryKeyField()
-    user_id = IntegerField()
+    slack_id = TextField() #todo replace with slack id
     slu = TextField()
     grade = IntegerField()
     highest_grade = IntegerField()

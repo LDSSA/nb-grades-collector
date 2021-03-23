@@ -1,5 +1,5 @@
 from flask import Flask
-from src.routes import register_grade, create_users, update_info
+from routes import register_grade, create_users, update_info
 
 
 app = Flask(__name__)

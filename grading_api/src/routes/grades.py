@@ -1,42 +1,41 @@
 from flask import request, Blueprint, jsonify
-from src.schema import SlackUser, Grade
-from src.config import DB
+from schema import SlackUser, Grade
+from config import DB
 
 """
 endpoints related with account creation
 
 Endpoints:
     ->register_grade;
-    ->get_grades_by_slu;
 """
 
-# TODO include login
 register_grade = Blueprint('register_grade', __name__)
 
 
 @register_grade.route('/register_grade', methods=['POST'])
 def _register_grade():
     """
-    Registation of a Grade
+    Registration of a Grade
     Return a success message
     The request should follow the structure bellow:
-    {"email": str,
-    "slu": str,
-    "utils": int
+    {
+    "slack_id": "78",
+    "slu": "slu0",
+    "grade": 16
     }
     """
     try:
         obs_dict = request.get_json()
-        email = obs_dict["email"]
+        slack_id = obs_dict["slack_id"]
         slu = obs_dict["slu"]
-        last_grade = obs_dict["utils"]
-        user = SlackUser.get_or_none(email=email)
+        last_grade = obs_dict["grade"]
+        user = SlackUser.get_or_none(slack_id=slack_id)
         if not user:
-            raise ValueError(f"User with email {email} does not exist")
-        user_id = user.id
-        grade = Grade.get_or_none(user_id=user_id, slu=slu)
+            raise ValueError(f"User with slack id {slack_id} does not exist")
+        slack_id = user.slack_id
+        grade = Grade.get_or_none(slack_id=slack_id, slu=slu)
         if not grade:
-            grade = Grade(user_id=user_id, slu=slu, grade=last_grade, highest_grade=last_grade)
+            grade = Grade(slack_id=slack_id, slu=slu, grade=last_grade, highest_grade=last_grade)
         elif grade.highest_grade < last_grade:
             grade.highest_grade = last_grade
             grade.grade = last_grade
@@ -47,5 +46,5 @@ def _register_grade():
         return jsonify(response)
     except Exception as e:
         DB.rollback()
-        response = {"status": "error", "details": e}
+        response = {"status": "error", "details": None}
         return jsonify(response)
