@@ -48,12 +48,5 @@ def submit(
     except IntegrityError:
         # no ned to do anyhting, means the student has already submited
         DB.rollback()
-    conn = sqlite3.connect("Submissions.db")
-    cursor = conn.cursor()
-    r = cursor.execute('select * from Submission_db')
-    print([i for i in r])
-    cursor.close()
-
 
     return 'OK'
-
