@@ -46,3 +46,9 @@ git push heroku mvp:main
 ```bash
 https://sub-nb-grades-collector.herokuapp.com/docs
 ```
+
+## postgres connect
+
+```bash
+heroku pg:psql
+```
