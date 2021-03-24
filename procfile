@@ -1,5 +1,1 @@
-build:
-  docker:
-    web: Dockerfile
-run:
-  web: /bin/bash -c 'uvicorn main:app'
+web: uvicorn main:app --host=0.0.0.0 --port=${PORT:-5000}
