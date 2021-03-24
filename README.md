@@ -11,7 +11,25 @@ curl --header "Content-Type: application/json" \
 curl --header "Content-Type: application/json" \
   --request PUT \
   --data '{"learning_unit": 0,"slack_id":"UTS63FC02","grade": 0,"metadata":{}}' \
-  http://sub-nb-grades-collector:8000/submit
+  http://localhost/submit
+
+curl --header "Content-Type: application/json" \
+  --request PUT \
+  --data '{"learning_unit": 0,"slack_id":"UTS63FC02","grade": 0,"metadata":{}}' \
+  https://sub-nb-grades-collector.herokuapp.com/submit
+```
+
+## gvnicorn local run
+
+```bash
+uvicorn main:app --reload
+```
+
+## docker local run
+
+```bash
+docker build -t nb-grades-collector .
+docker run --rm -it -p 80:80 nb-grades-collector
 ```
 
 ## deployment
