@@ -39,3 +39,9 @@ heroku git:remote -a sub-nb-grades-collector
 heroku stack:set container
 git push heroku mvp:main
 ```
+
+## docs
+
+```bash
+https://sub-nb-grades-collector.herokuapp.com/docs
+```
