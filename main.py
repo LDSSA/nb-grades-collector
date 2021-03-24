@@ -4,18 +4,20 @@ import os
 from fastapi import FastAPI, Body
 from pydantic import BaseModel
 from peewee import (
-    SqliteDatabase, Model, IntegerField, TextField, CompositeKey, IntegrityError
+    Model, IntegerField, TextField, CompositeKey, IntegrityError
 )
 from playhouse.postgres_ext import JSONField
 from playhouse.db_url import connect
 
 DB = connect(os.environ.get('DATABASE_URL') or 'sqlite:///Submissions.db')
 
+
 class Submission_api(BaseModel):
     learning_unit: int
     slack_id: str = Body(None, min_length=9, max_length=9)
     grade: int
     metadata: Dict[str, str]
+
 
 class Submission_db(Model):
     learning_unit = IntegerField()
