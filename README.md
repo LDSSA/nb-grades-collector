@@ -19,5 +19,5 @@ curl --header "Content-Type: application/json" \
 ```bash
 heroku git:remote -a sub-nb-grades-collector
 heroku stack:set container
-git push heroku HEAD:master
+git push heroku mvp:main
 ```
