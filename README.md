@@ -35,6 +35,7 @@ docker run --rm -it -p 80:80 nb-grades-collector
 ## deployment
 
 ```bash
+heroku stack:set heroku-20
 heroku git:remote -a sub-nb-grades-collector
 heroku stack:set container
 git push heroku mvp:main

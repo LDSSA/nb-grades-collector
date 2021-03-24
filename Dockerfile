@@ -1,8 +1,5 @@
 FROM tiangolo/uvicorn-gunicorn-fastapi:python3.7
 
-COPY . /opt/app
-WORKDIR /opt/app
+COPY . /app
 
-RUN pip install -r requirements.txt
-
-#ENTRYPOINT [ "uvicorn", "main:app" ]
+RUN pip install -r /app/requirements.txt
