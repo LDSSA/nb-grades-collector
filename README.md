@@ -2,7 +2,7 @@
 
 ## use Jupyter notebook
 
-Copy the `submit.py` file to the sale folder as the Exercise Notebook.
+Copy the `submit.py` file to the same folder as the Exercise Notebook.
 
 To submit a LU just add this code in the last cell of a notebook, instructing students to fill the slack_id <https://moshfeu.medium.com/how-to-find-my-member-id-in-slack-workspace-d4bba942e38c>
 
