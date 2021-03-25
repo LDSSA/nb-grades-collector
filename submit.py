@@ -20,10 +20,3 @@ def submit(slack_id: str, learning_unit: int) -> None:
         data=json.dumps(data)
     )
     print('Success' if response.ok else 'Whoopsie Daisy')
-
-'''from submit import submit
-
-slack_id = None  # example: "UTS63FC02"
-assert slack_id is not None
-submit(slack_id)
-'''
