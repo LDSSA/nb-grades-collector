@@ -1,6 +1,18 @@
 # nb-grades-collector
 
-## use
+## use Jupyter notebook
+
+To submit a LU
+
+```python
+from submit import submit
+
+slack_id = None  # example: "UTS63FC02"
+assert slack_id is not None
+submit(slack_id, 0)
+```
+
+## use with curl
 
 ```bash
 curl --header "Content-Type: application/json" \
