@@ -1,12 +1,19 @@
-# nb-grades-collector
+# For Instructors
 
 ## use Jupyter notebook
 
 1. Copy the `submit.py` file to the same folder as the Exercise Notebook.
-2. Install and add `requests` to the requirements file
+2. Install the requirements on this repo
 
 ```bash
-pip install requests
+cd nb-grades-collector
+pip install -r requirements.txt
+```
+
+3. Update the requirements of the LU you're working on
+
+```bash
+cd cd Week\ 00/SLU00\ -\ Jupyter\ Notebook/
 pip freeze > requirements.txt
 ```
 
@@ -16,7 +23,7 @@ To submit a LU you'll need to add 3 cells at the bottom of the notebook, as foll
 
 **Cell 1** markdown, read-only
 ```markdown
-# Sumit your work!
+# Submit your work!
 
 To submit your work, [get your slack id](https://moshfeu.medium.com/how-to-find-my-member-id-in-slack-workspace-d4bba942e38c) and fill it in the `slack_id` variable.
 
@@ -35,7 +42,9 @@ from submit import submit
 submit(slack_id, 0)
 ```
 
-This serves to collect the student slack ids so that we know hwo has submitted the LU.
+This serves to collect the student slack ids so that we know who has submitted the LU.
+
+# For Maintainers
 
 ## use with curl
 
