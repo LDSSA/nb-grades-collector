@@ -23,16 +23,15 @@ To submit your work, [get your slack id](https://moshfeu.medium.com/how-to-find-
 Example: `slack_id = "UTS63FC02"`
 ```
 
-**Cell 2** code, normal
+**Cell 2** code, Autograded Answer
 ```python
 slack_id = None
 ```
 
-**Cell 3** code, read-only
+**Cell 3** code, Autograded tests
 ```python
 from submit import submit
 
-assert slack_id is not None
 submit(slack_id, 0)
 ```
 
