@@ -13,7 +13,7 @@ pip install -r requirements.txt
 3. Update the requirements of the LU you're working on
 
 ```bash
-cd cd Week\ 00/SLU00\ -\ Jupyter\ Notebook/
+cd Week\ 00/SLU00\ -\ Jupyter\ Notebook/
 pip freeze > requirements.txt
 ```
 
