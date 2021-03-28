@@ -4,6 +4,7 @@ from nbgrader import utils
 import json
 
 API_URL = "https://sub-nb-grades-collector.herokuapp.com"
+NOTEBOOk_PATH = "Exercises Notebook.ipynb"
 
 
 def _get_grade(notebook_path):
@@ -26,11 +27,12 @@ def submit(slack_id: str, learning_unit: int) -> None:
     param learning_unit like 0
     '''
     try:
-        total_score, max_total_score = _get_grade("../Exercise Notebook.ipynb")
+        total_score, max_total_score = _get_grade(NOTEBOOk_PATH)
         assert isinstance(total_score, int)
+        print(f"Your grade is {total_score} out of {max_total_score}!")
     except:
         print("Error while calculating your grade!")
-    print(f"Your grade is {total_score} out of {max_total_score}!")
+        return None
     print("...Sending Grade...")
     data = {
         "learning_unit": learning_unit,
@@ -43,3 +45,4 @@ def submit(slack_id: str, learning_unit: int) -> None:
         data=json.dumps(data)
     )
     print('Your grade was successfully submitted!' if response.ok else 'Error while submitting your grade!')
+    return None
