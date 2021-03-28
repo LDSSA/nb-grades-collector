@@ -10,15 +10,33 @@ pip install requests
 pip freeze > requirements.txt
 ```
 
-To submit a LU just add this code in the last cell of a notebook, instructing students to fill the slack_id <https://moshfeu.medium.com/how-to-find-my-member-id-in-slack-workspace-d4bba942e38c>
+To submit a LU you'll need to add 3 cells at the bottom of the notebook, as follows:
 
+<img src='assets/submit.png' alt='Finder' width="75%" />
+
+**Cell 1** markdown, read-only
+```markdown
+# Sumit your work!
+
+To submit your work, [get your slack id](https://moshfeu.medium.com/how-to-find-my-member-id-in-slack-workspace-d4bba942e38c) and fill it in the `slack_id` variable.
+
+Example: `slack_id = "UTS63FC02"`
+```
+
+**Cell 2** code, normal
+```python
+slack_id = None
+```
+
+**Cell 3** code, read-only
 ```python
 from submit import submit
 
-slack_id = None  # example: "UTS63FC02"
 assert slack_id is not None
 submit(slack_id, 0)
 ```
+
+This serves to collect the student slack ids so that we know hwo has submitted the LU.
 
 ## use with curl
 
