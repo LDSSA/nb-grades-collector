@@ -1,24 +1,50 @@
-# nb-grades-collector
+# For Instructors
 
 ## use Jupyter notebook
 
 1. Copy the `submit.py` file to the same folder as the Exercise Notebook.
-2. Install and add `requests` to the requirements file
+2. Install the requirements on this repo
 
 ```bash
-pip install requests
+cd nb-grades-collector
+pip install -r requirements.txt
+```
+
+3. Update the requirements of the LU you're working on
+
+```bash
+cd Week\ 00/SLU00\ -\ Jupyter\ Notebook/
 pip freeze > requirements.txt
 ```
 
-To submit a LU just add this code in the last cell of a notebook, instructing students to fill the slack_id <https://moshfeu.medium.com/how-to-find-my-member-id-in-slack-workspace-d4bba942e38c>
+To enable students to submit a LU you'll need to add 3 cells at the bottom of the notebook, as follows:
 
+<img src='assets/submit.png' alt='Finder' width="75%" />
+
+**Cell 1** markdown, read-only
+```markdown
+# Submit your work!
+
+To submit your work, [get your slack id](https://moshfeu.medium.com/how-to-find-my-member-id-in-slack-workspace-d4bba942e38c) and fill it in the `slack_id` variable.
+
+Example: `slack_id = "UTS63FC02"`
+```
+
+**Cell 2** code, Autograded Answer
+```python
+slack_id = None
+```
+
+**Cell 3** code, Autograded tests
 ```python
 from submit import submit
 
-slack_id = None  # example: "UTS63FC02"
-assert slack_id is not None
 submit(slack_id, 0)
 ```
+
+This serves to collect the student slack ids so that we know who has submitted the LU.
+
+# For Maintainers
 
 ## use with curl
 
