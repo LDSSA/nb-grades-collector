@@ -13,11 +13,11 @@ pip install -r requirements.txt
 3. Update the requirements of the LU you're working on
 
 ```bash
-cd cd Week\ 00/SLU00\ -\ Jupyter\ Notebook/
+cd Week\ 00/SLU00\ -\ Jupyter\ Notebook/
 pip freeze > requirements.txt
 ```
 
-To submit a LU you'll need to add 3 cells at the bottom of the notebook, as follows:
+To enable students to submit a LU you'll need to add 3 cells at the bottom of the notebook, as follows:
 
 <img src='assets/submit.png' alt='Finder' width="75%" />
 
