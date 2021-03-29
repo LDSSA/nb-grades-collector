@@ -1,24 +1,31 @@
-# nb-grades-collector
+# For Instructors
 
 ## use Jupyter notebook
 
-1. Copy the `submit.py` file to the same folder as the Exercise Notebook.
-2. Install and add `requests` to the requirements file
+1. Copy the `instructores_example/submit.py` file to the same folder as the Exercise Notebook.
+2. Install the requirements on this repo
 
 ```bash
-pip install requests
+cd nb-grades-collector
+cd instructores_example
+pip install -r requirements.txt
+```
+
+3. Update the requirements of the LU you're working on
+
+```bash
+cd Week\ 00/SLU00\ -\ Jupyter\ Notebook/
 pip freeze > requirements.txt
 ```
 
-To submit a LU just add this code in the last cell of a notebook, instructing students to fill the slack_id <https://moshfeu.medium.com/how-to-find-my-member-id-in-slack-workspace-d4bba942e38c>
+To enable students to submit a SLU, please copy the cells regarding work submission on instructores_example/Exercise Notebook.ipynb, to yours.
 
-```python
-from submit import submit
+<img src='assets/submit.png' alt='Finder' width="75%" />
 
-slack_id = None  # example: "UTS63FC02"
-assert slack_id is not None
-submit(slack_id, 0)
-```
+
+This serves to collect the student slack ids so that we know who has submitted the LU.
+
+# For Maintainers
 
 ## use with curl
 
@@ -57,8 +64,7 @@ docker run --rm -it -p 80:80 nb-grades-collector
 ```bash
 heroku stack:set heroku-20
 heroku git:remote -a sub-nb-grades-collector
-heroku stack:set container
-git push heroku mvp:main
+git push heroku <branch>:main
 ```
 
 ## docs
