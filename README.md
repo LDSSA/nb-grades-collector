@@ -18,7 +18,7 @@ cd Week\ 00/SLU00\ -\ Jupyter\ Notebook/
 pip freeze > requirements.txt
 ```
 
-To enable students to submit a SLU, please copy the cells regarding work submission on instructores_example/Exercise Notebook.ipynb, to yours.
+4. To enable students to submit a SLU, please copy the cells regarding work submission on `instructores_example/Exercise Notebook.ipynb`, to yours.
 
 <img src='assets/submit.png' alt='Finder' width="75%" />
 
