@@ -4,7 +4,7 @@ from nbgrader import utils
 import json
 
 API_URL = "https://sub-nb-grades-collector.herokuapp.com"
-NOTEBOOk_PATH = "Exercises Notebook.ipynb"
+NOTEBOOk_PATH = "Exercise Notebook.ipynb"
 
 
 def _get_grade(notebook_path):
