@@ -2,11 +2,12 @@
 
 ## use Jupyter notebook
 
-1. Copy the `submit.py` file to the same folder as the Exercise Notebook.
+1. Copy the `instructores_example/submit.py` file to the same folder as the Exercise Notebook.
 2. Install the requirements on this repo
 
 ```bash
 cd nb-grades-collector
+cd instructores_example
 pip install -r requirements.txt
 ```
 
@@ -17,30 +18,10 @@ cd Week\ 00/SLU00\ -\ Jupyter\ Notebook/
 pip freeze > requirements.txt
 ```
 
-To enable students to submit a LU you'll need to add 3 cells at the bottom of the notebook, as follows:
+4. To enable students to submit a SLU, please copy the cells regarding work submission on `instructores_example/Exercise Notebook.ipynb`, to yours.
 
 <img src='assets/submit.png' alt='Finder' width="75%" />
 
-**Cell 1** markdown, read-only
-```markdown
-# Submit your work!
-
-To submit your work, [get your slack id](https://moshfeu.medium.com/how-to-find-my-member-id-in-slack-workspace-d4bba942e38c) and fill it in the `slack_id` variable.
-
-Example: `slack_id = "UTS63FC02"`
-```
-
-**Cell 2** code, Autograded Answer
-```python
-slack_id = None
-```
-
-**Cell 3** code, Autograded tests
-```python
-from submit import submit
-
-submit(slack_id, 0)
-```
 
 This serves to collect the student slack ids so that we know who has submitted the LU.
 
