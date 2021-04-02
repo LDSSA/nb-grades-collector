@@ -17,7 +17,7 @@ cd Week\ 00/SLU00\ -\ Jupyter\ Notebook/
 pip freeze > requirements.txt
 ```
 
-To enable students to submit a LU you'll need to add 3 cells at the bottom of the notebook, as follows:
+4. To enable students to submit a LU you'll need to add 3 cells at the bottom of the notebook, as follows (dont forget to set the learning unit number!):
 
 <img src='assets/submit.png' alt='Finder' width="75%" />
 
@@ -35,11 +35,11 @@ Example: `slack_id = "UTS63FC02"`
 slack_id = None
 ```
 
-**Cell 3** code, Autograded tests
+**Cell 3** code, Autograded tests (dont forget to set the learning unit number!)
 ```python
 from submit import submit
 
-submit(slack_id, 0)
+submit(slack_id=slack_id, learning_unit=0)
 ```
 
 This serves to collect the student slack ids so that we know who has submitted the LU.
