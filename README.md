@@ -38,7 +38,7 @@ slack_id = "UTS63FC02"
 # slack_id =
 ```
 
-**Cell 3** code, Autograded tests (dont forget to set the learning unit number!)
+**Cell 3** code, Autograded tests, 0 points (dont forget to set the learning unit number!)
 ```python
 from submit import submit
 
