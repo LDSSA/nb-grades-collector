@@ -39,6 +39,7 @@ slack_id = None
 ```python
 from submit import submit
 
+assert slack_id is not None
 submit(slack_id=slack_id, learning_unit=0)
 ```
 
