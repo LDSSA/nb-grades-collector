@@ -32,13 +32,17 @@ Example: `slack_id = "UTS63FC02"`
 
 **Cell 2** code, Autograded Answer
 ```python
-slack_id = None
+### BEGIN SOLUTION
+slack_id = "UTS63FC02"
+### END SOLUTION
+# slack_id =
 ```
 
-**Cell 3** code, Autograded tests (dont forget to set the learning unit number!)
+**Cell 3** code, Autograded tests, 0 points (dont forget to set the learning unit number!)
 ```python
 from submit import submit
 
+assert slack_id is not None
 submit(slack_id=slack_id, learning_unit=0)
 ```
 

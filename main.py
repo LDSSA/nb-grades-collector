@@ -14,7 +14,7 @@ DB = connect(os.environ.get('DATABASE_URL') or 'sqlite:///Submissions.db')
 
 class Submission_api(BaseModel):
     learning_unit: int
-    slack_id: str = Body(None, min_length=5, max_length=20)
+    slack_id: str = Body(..., min_length=5, max_length=20)
     grade: int
     metadata: Dict[str, str]
 
