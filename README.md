@@ -19,7 +19,7 @@ pip freeze > requirements.txt
 
 4. To enable students to submit a LU you'll need to add 3 cells at the bottom of the notebook, as follows (dont forget to set the learning unit number!):
 
-<img src='assets/submit.png' alt='Finder' width="75%" />
+<img src='assets/submit_work.png' alt='Finder' width="75%" />
 
 **Cell 1** markdown, read-only
 ```markdown
