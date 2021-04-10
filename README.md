@@ -80,11 +80,18 @@ docker run --rm -it -p 80:80 nb-grades-collector
 
 ## deployment
 
-```bash
+```bash~
+# first time
 heroku stack:set heroku-20
 heroku git:remote -a sub-nb-grades-collector
 heroku stack:set container
-git push heroku mvp:main
+heroku config:set DATABASE="wouldntyouliketoknow"
+heroku config:set USER="wouldntyouliketoknow"
+heroku config:set PASSWORD="wouldntyouliketoknow"
+heroku config:set HOST="wouldntyouliketoknow"
+
+# every time
+git push heroku main
 ```
 
 ## docs
