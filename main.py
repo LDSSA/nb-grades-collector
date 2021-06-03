@@ -1,4 +1,4 @@
-from typing import Dict
+from typing import Dict, Union
 import os
 
 from fastapi import FastAPI, Body
@@ -20,7 +20,7 @@ DB = PooledPostgresqlExtDatabase(
 
 
 class Submission_api(BaseModel):
-    learning_unit: int
+    learning_unit: Union[str, int]
     slack_id: str = Body(..., min_length=5, max_length=20)
     grade: int
     metadata: Dict[str, str]
@@ -62,7 +62,7 @@ def submit(
     submission_api: Submission_api
 ):
     submission_db = Submission_db(
-        learning_unit=submission_api.learning_unit,
+        learning_unit=str(submission_api.learning_unit),
         slack_id=submission_api.slack_id,
         grade=submission_api.grade,
         metadata=submission_api.metadata

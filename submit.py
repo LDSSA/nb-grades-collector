@@ -1,8 +1,9 @@
 import requests
 import json
+from typing import Union
 
 
-def submit(slack_id: str, learning_unit: int) -> None:
+def submit(slack_id: str, learning_unit: Union[str, int]) -> None:
     '''
     Submits the notebook to the grades-collector.
 
